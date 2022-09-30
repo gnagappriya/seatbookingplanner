@@ -2,17 +2,29 @@
 Seat Booking planner
 
 create database sbp;
+
 select * from roles;
+
 select * from users;
+
 select * from user_roles;
+
 INSERT INTO roles(name) VALUES('ROLE_USER');
+
 INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
+
 INSERT INTO roles(name) VALUES('ROLE_ADMIN');
+
 select * from users;
+
 delete from roles where id='1';
+
 drop table if exists roles;
+
 drop table if exists user_roles;
+
 drop table if exists users;
+
 create table roles (id bigint not null auto_increment, created_on bigint, description varchar(255), modified_on bigint, name varchar(255), primary key (id)) engine=MyISAM;
 create table user_roles (user_id bigint not null, role_id bigint not null, primary key (user_id, role_id)) engine=MyISAM;
 create table users (id bigint not null auto_increment, email varchar(255), first_name varchar(255), last_name varchar(255), password varchar(255), username varchar(255), primary key (id)) engine=MyISAM;
